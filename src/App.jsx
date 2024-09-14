@@ -1,41 +1,49 @@
-import { useState } from "react";
+import { useReducer, useState } from "react";
 import gallerey from "./data";
 
+// Function for useReducer
+const changeState = () => {}
+
 function App() {
-  const [images, setImages] = useState(gallerey);
 
-  const addLike = (id) => {
-    const updatedImages = images.map((image) => {
-      if (id === image.id)
-        return {
-          ...image,
-          likes: image.likes + 1,
-        };
-      else {
-        return image;
-      }
-    });
-    setImages(updatedImages);
-  };
+  // useState
+  // const [images, setImages] = useState(gallerey);
 
-  const addDislike = (id) => {
-    const updatedImages = images.map((image) => {
-      if (id === image.id)
-        return {
-          ...image,
-          disLikes: image.disLikes + 1,
-        };
-      else {
-        return image;
-      }
-    });
-    setImages(updatedImages);
-  };
+  // const addLike = (id) => {
+  //   const updatedImages = images.map((image) => {
+  //     if (id === image.id)
+  //       return {
+  //         ...image,
+  //         likes: image.likes + 1,
+  //       };
+  //     else {
+  //       return image;
+  //     }
+  //   });
+  //   setImages(updatedImages);
+  // };
 
-  const deleteItem = (id) => {
-    const updatedImages = images.filter((image) => id !== image.id)
-    setImages(updatedImages);
-  };
+  // const addDislike = (id) => {
+  //   const updatedImages = images.map((image) => {
+  //     if (id === image.id)
+  //       return {
+  //         ...image,
+  //         disLikes: image.disLikes + 1,
+  //       };
+  //     else {
+  //       return image;
+  //     }
+  //   });
+  //   setImages(updatedImages);
+  // };
+
+  // const deleteItem = (id) => {
+  //   const updatedImages = images.filter((image) => id !== image.id)
+  //   setImages(updatedImages);
+  // };
+
+  // useReducer
+  const [images, setImages] = useReducer(changeState, gallerey)
 
   return (
     <div className="images-container">
