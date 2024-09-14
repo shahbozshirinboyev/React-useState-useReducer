@@ -32,7 +32,10 @@ function App() {
     setImages(updatedImages);
   };
 
-  const deleteItem = () => {};
+  const deleteItem = (id) => {
+    const updatedImages = images.filter((image) => id !== image.id)
+    setImages(updatedImages);
+  };
 
   return (
     <div className="images-container">
