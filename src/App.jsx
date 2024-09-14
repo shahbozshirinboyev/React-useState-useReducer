@@ -18,7 +18,19 @@ function App() {
     setImages(updatedImages);
   };
 
-  const addDislike = (id) => {};
+  const addDislike = (id) => {
+    const updatedImages = images.map((image) => {
+      if (id === image.id)
+        return {
+          ...image,
+          disLikes: image.disLikes + 1,
+        };
+      else {
+        return image;
+      }
+    });
+    setImages(updatedImages);
+  };
 
   const deleteItem = () => {};
 
